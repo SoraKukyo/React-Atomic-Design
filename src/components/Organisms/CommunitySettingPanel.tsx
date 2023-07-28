@@ -1,14 +1,7 @@
-import { useState } from "react";
-import Header from "./components/Molecules/Header";
-import Logo from "./components/atoms/Logo";
-import CommunityListing from "./components/Molecules/CommunityListing";
-import CommunityPanel from "./components/Organisms/CommunityPanel";
-import IconWithText from "./components/atoms/IconWithText";
-import { ReactComponent as Icon } from "./logo.svg";
-import SettingOptions from "./components/Molecules/SettingOptions";
-import MemberListing from "./components/Molecules/MemberListing";
-import CommunityProfile from "./components/Molecules/CommunityProfile";
-import CommunitySettingPanel from "./components/Organisms/CommunitySettingPanel";
+import CommunityProfile from "../Molecules/CommunityProfile";
+import MemberListing from "../Molecules/MemberListing";
+import SettingOptions from "../Molecules/SettingOptions";
+import Logo from "../atoms/Logo";
 
 const items = [
   {
@@ -59,16 +52,14 @@ const items = [
   // Add more items as needed
 ];
 
-function Test() {
-  const [currentPage, setCurrentPage] = useState("Poll");
-  function onSearch(value: string) {}
-  function onClick() {}
-
+function CommunitySettingPanel() {
   return (
-    <div className="w-screen h-screen  ">
-      <CommunitySettingPanel />
+    <div className="p-4 flex flex-col space-y-10 w-full lg:w-[260px]">
+      <CommunityProfile />
+      <SettingOptions />
+      <MemberListing items={items} />
     </div>
   );
 }
 
-export default Test;
+export default CommunitySettingPanel;
